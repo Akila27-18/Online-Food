@@ -1,0 +1,102 @@
+[
+  {
+    "model": "menu.restaurant",
+    "pk": 1,
+    "fields": {
+      "name": "Spicy Bites",
+      "location": "Downtown City Center"
+    }
+  },
+  {
+    "model": "menu.restaurant",
+    "pk": 2,
+    "fields": {
+      "name": "Green Garden",
+      "location": "Uptown Plaza"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 1,
+    "fields": {
+      "name": "Starters",
+      "description": "Appetizers to begin your meal"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 2,
+    "fields": {
+      "name": "Main Course",
+      "description": "Hearty and filling dishes"
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": 3,
+    "fields": {
+      "name": "Desserts",
+      "description": "Sweet treats to finish your meal"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 1,
+    "fields": {
+      "restaurant": 1,
+      "category": 1,
+      "name": "Crispy Spring Rolls",
+      "description": "Golden fried rolls with vegetable filling",
+      "price": "120.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 2,
+    "fields": {
+      "restaurant": 1,
+      "category": 2,
+      "name": "Spicy Chicken Curry",
+      "description": "Authentic chicken curry with spices",
+      "price": "280.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 3,
+    "fields": {
+      "restaurant": 1,
+      "category": 3,
+      "name": "Chocolate Lava Cake",
+      "description": "Warm cake with molten chocolate inside",
+      "price": "180.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 4,
+    "fields": {
+      "restaurant": 2,
+      "category": 2,
+      "name": "Veggie Pasta",
+      "description": "Pasta with fresh vegetables and creamy sauce",
+      "price": "220.00",
+      "is_available": true
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 5,
+    "fields": {
+      "restaurant": 2,
+      "category": 3,
+      "name": "Fruit Salad",
+      "description": "Seasonal fruits with honey dressing",
+      "price": "150.00",
+      "is_available": false
+    }
+  }
+]
