@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -115,3 +116,41 @@ from django.contrib.auth.views import LogoutView
 
 class MyLogoutView(LogoutView):
     allow_get = True
+=======
+from rest_framework import viewsets
+from .models import Restaurant, Category, MenuItem
+from .serializers import RestaurantSerializer, CategorySerializer, MenuItemSerializer
+
+
+class RestaurantViewSet(viewsets.ModelViewSet):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):  # Public access
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class MenuItemViewSet(viewsets.ModelViewSet):
+    serializer_class = MenuItemSerializer
+
+    def get_queryset(self):
+        queryset = MenuItem.objects.all()
+
+        # Nested filter by restaurant
+        restaurant_id = self.kwargs.get("restaurant_pk")
+        if restaurant_id:
+            queryset = queryset.filter(restaurant_id=restaurant_id)
+
+        # Extra filters (optional)
+        category_id = self.request.query_params.get("category")
+        if category_id:
+            queryset = queryset.filter(category_id=category_id)
+
+        available = self.request.query_params.get("available")
+        if available in ["true", "false"]:
+            queryset = queryset.filter(is_available=(available == "true"))
+
+        return queryset
+>>>>>>> e15e063d4c1e5d4c2805f61d97193ed308e6a6e9

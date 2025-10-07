@@ -117,6 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+<<<<<<< HEAD
 import os
 
 MEDIA_URL = '/media/'
@@ -136,6 +137,11 @@ LOGOUT_REDIRECT_URL = '/'  # optional redirect after logout
 STRIPE_PUBLIC_KEY = "your_public_key_here"
 STRIPE_SECRET_KEY = "your_secret_key_here"
 
+=======
+STATIC_URL = 'static/'
+
+# Default primary key field type
+>>>>>>> e15e063d4c1e5d4c2805f61d97193ed308e6a6e9
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
