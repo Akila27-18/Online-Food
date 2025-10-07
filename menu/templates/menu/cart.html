@@ -1,0 +1,33 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1 class="text-danger mb-4">Your Cart</h1>
+{% if items %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in items %}
+    <tr>
+      <td>{{ entry.item.name }}</td>
+      <td>{{ entry.quantity }}</td>
+      <td>₹{{ entry.subtotal }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2" class="text-end fw-bold">Total</td>
+      <td class="fw-bold">₹{{ total }}</td>
+    </tr>
+  </tbody>
+</table>
+<a href="{% url 'checkout' %}" class="btn btn-danger">Proceed to Checkout</a>
+{% else %}
+<p>Your cart is empty.</p>
+<a href="{% url 'menu' %}" class="btn btn-danger">Go to Menu</a>
+{% endif %}
+{% endblock %}

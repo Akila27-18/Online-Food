@@ -1,0 +1,29 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1 class="text-danger mb-4">Order History</h1>
+{% if orders %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Date</th>
+      <th>Total</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+    <tr>
+      <td>{{ order.id }}</td>
+      <td>{{ order.created_at }}</td>
+      <td>₹{{ order.total_price }}</td>
+      <td>{{ order.get_status_display }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>You have not placed any orders yet.</p>
+{% endif %}
+{% endblock %}

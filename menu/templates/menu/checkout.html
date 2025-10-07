@@ -1,0 +1,17 @@
+{% extends 'menu/base.html' %}
+
+{% block content %}
+<h1 class="text-danger mb-4">Checkout</h1>
+{% if success %}
+<div class="alert alert-success">
+  Your order has been placed successfully!
+</div>
+<a href="{% url 'menu' %}" class="btn btn-danger">Back to Menu</a>
+{% else %}
+<p>Click the button below to place your order.</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Place Order</button>
+</form>
+{% endif %}
+{% endblock %}
