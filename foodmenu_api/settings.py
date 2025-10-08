@@ -132,9 +132,9 @@ LOGOUT_REDIRECT_URL = '/'  # optional redirect after logout
 
 
 # Default primary key field type
+STRIPE_PUBLIC_KEY = "pk_test_51N1zAbCExamplePublicKey000000000000"
+STRIPE_SECRET_KEY = "sk_test_51N1zAbCExampleSecretKey000000000000"
 
-STRIPE_PUBLIC_KEY = "pk_test_51xxxxxxxxxxxxxxxxxxxxxxxx"
-STRIPE_SECRET_KEY = "sk_test_51xxxxxxxxxxxxxxxxxxxxxxxx"
 
 
 STATIC_URL = 'static/'
